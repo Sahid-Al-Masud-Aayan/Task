@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CgShoppingCart } from "react-icons/cg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo */}
           <Link to="/">
-          <img className='w-[200px] h-[40px]' src="logo.png" alt="logo" />
+          <img className='w-[100px] h-[40px]' src="https://www.ryans.com/assets/images/ryans-logo.svg" alt="logo" />
           </Link>
         {/* Toggle button for mobile */}
         <div className="md:hidden">
@@ -38,17 +39,22 @@ const Navbar = () => {
         <div className={`md:flex ${isOpen ? 'block' : 'hidden'} w-full md:w-auto`}>
           <ul className="md:flex md:space-x-6">
             <li className="my-2 md:my-0">
+              <Link to="/cart" className="hover:text-yellow-400 font-medium text-xl ">
+              <CgShoppingCart/>
+              </Link>
+            </li>
+            <li className="my-2 md:my-0">
               <Link to="/" className="hover:text-yellow-400 font-medium text-xl">
                 Home
               </Link>
             </li>
             <li className="my-2 md:my-0">
-              <Link to="#products" className="hover:text-yellow-400 font-medium text-xl">
+              <Link to="/laptops" className="hover:text-yellow-400 font-medium text-xl">
                 Products
               </Link>
             </li>
             <li className="my-2 md:my-0">
-              <Link to="#about" className="hover:text-yellow-400 font-medium text-xl">
+              <Link to="/about" className="hover:text-yellow-400 font-medium text-xl">
                 About Us
               </Link>
             </li>
