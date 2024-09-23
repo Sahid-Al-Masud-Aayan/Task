@@ -9,7 +9,7 @@ const Home = () => {
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6">Your Ultimate Laptop Destination</h1>
           <p className="text-xl md:text-2xl mb-8">Find the best laptops for gaming, business, and everyday use!</p>
-          <Link to='#' className="bg-yellow-500 text-white px-8 py-4 rounded-full text-lg hover:bg-yellow-600 transition duration-300">
+          <Link to='/laptops' className="bg-yellow-500 text-white px-8 py-4 rounded-full text-lg hover:bg-yellow-600 transition duration-300">
             Shop Now
           </Link>
         </div>
