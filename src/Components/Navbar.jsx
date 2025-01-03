@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo */}
           <Link to="/">
-          <img className='w-[100px] h-[40px]' src="https://www.ryans.com/assets/images/ryans-logo.svg" alt="logo" />
+          <img className='w-[200px] h-[60px]' src="./logo.png" alt="logo" />
           </Link>
         {/* Toggle button for mobile */}
         <div className="md:hidden">

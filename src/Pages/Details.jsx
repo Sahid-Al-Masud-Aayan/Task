@@ -45,80 +45,81 @@ const Details = () => {
     const laptopSpecs= useSelector((state)=>state.counter.value)
     const totalPrice = laptopSpecs.price*120 * quantity;
     
-    console.log(totalPrice);
     
     
     return (
         <>
-      <div className=" h-[615px] bg-white shadow-md">
-      <div className="flex flex-col md:flex-row justify-center items-center">
-        {/* Laptop Image */}
-        <div className="w-full md:w-1/2 p-4">
-          <img
-            src={laptopSpecs.image_url}
-            alt="ASUS VivoBook 15"
-            className="w-[590px] h-[508px] rounded-md "
-            />
-        </div>
+<div className="h-auto bg-white shadow-md p-4 md:p-8">
+  <div className="flex flex-col md:flex-row justify-center items-center">
+    {/* Laptop Image */}
+    <div className="w-full md:w-1/2 flex justify-center p-4">
+      <img
+        src={laptopSpecs.image_url}
+        alt="ASUS VivoBook 15"
+        className="w-full max-w-[500px] h-auto rounded-md"
+      />
+    </div>
 
-        {/* Laptop Details */}
-        <div className="w-full md:w-1/2 p-4">
-          <h2 className="text-3xl font-semibold text-gray-800">
-            {laptopSpecs.description_1}
-          </h2>
+    {/* Laptop Details */}
+    <div className="w-full md:w-1/2 p-4">
+      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+        {laptopSpecs.description_1}
+      </h2>
 
-          {/* Rating */}
+      {/* Price */}
+      <div className="text-2xl md:text-3xl font-bold text-red-600 mt-4">
+        Tk {laptopSpecs.price * 120 * quantity}
+      </div>
 
-          {/* Special Price */}
-          <div className="text-3xl font-bold text-red-600 mt-[20px]">Tk {laptopSpecs.price*120*quantity}</div>
+      {/* Quick Overview */}
+      <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-2 mt-8">
+        Quick Overview
+      </h3>
+      <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm md:text-base">
+        <li>Processor Brand: {laptopSpecs.Processor_Brand}</li>
+        <li>Processor Type: {laptopSpecs.Processor_Type}</li>
+        <li>Generation: {laptopSpecs.Processor_Generation}</li>
+        <li>RAM: {laptopSpecs.ram}</li>
+        <li>Storage: {laptopSpecs.Storage}</li>
+        <li>Color: {laptopSpecs.color}</li>
+        <li>Display Size: {laptopSpecs.Display_Size}</li>
+      </ul>
 
-          {/* Quick Overview */}
-          <h3 className="text-xl font-semibold text-gray-700 mb-2 mt-[50px]">Quick Overview</h3>
-          <ul className="list-disc list-inside text-gray-600 space-y-1">
-            <li>Processor Brand: {laptopSpecs.Processor_Brand}</li>
-            <li>Processor Type: {laptopSpecs.Processor_Type}</li>
-            <li>Generation: {laptopSpecs.Processor_Generation}</li>
-            <li>RAM: {laptopSpecs.ram}</li>
-            <li>Storage: {laptopSpecs.Storage}</li>
-            <li>Color: {laptopSpecs.color}</li>
-            <li>Display Size: {laptopSpecs.Display_Size}</li>
-          </ul>
-          <div className="flex justify-start items-center gap-10 mt-6">
-          <button
-        onClick={()=>buyPage(laptopSpecs)}
-        className=" w-1/4 h-[50px] bg-green-800 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 ">
+      {/* Buttons and Quantity */}
+      <div className="flex flex-col md:flex-row justify-start items-center gap-4 mt-6">
+        <button
+          onClick={() => buyPage(laptopSpecs)}
+          className="w-full md:w-1/4 h-[50px] bg-green-800 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+        >
           Add to Cart
         </button>
+
         <div className="flex items-center justify-center">
-      
-      <button
-        className="px-3 py-1 bg-gray-200 rounded-l-lg text-xl font-semibold hover:bg-gray-300"
-        onClick={decrement}
-      >
-        −
-      </button>
-
-      
-      <input
-        type="number"
-        value={quantity}
-        onChange={handleChange}
-        className="w-16 h-10 text-center border border-gray-300 outline-none text-lg"
-        min="1"
-      />
-
-
-      <button
-        className="px-3 py-1 bg-gray-200 rounded-r-lg text-xl font-semibold hover:bg-gray-300"
-        onClick={increment}
-      >
-        +
-      </button>
-    </div> 
-          </div>
+          <button
+            className="px-3 py-1 bg-gray-200 rounded-l-lg text-xl font-semibold hover:bg-gray-300"
+            onClick={decrement}
+          >
+            −
+          </button>
+          <input
+            type="number"
+            value={quantity}
+            onChange={handleChange}
+            className="w-16 h-10 text-center border border-gray-300 outline-none text-lg"
+            min="1"
+          />
+          <button
+            className="px-3 py-1 bg-gray-200 rounded-r-lg text-xl font-semibold hover:bg-gray-300"
+            onClick={increment}
+          >
+            +
+          </button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
     <div className="bg-gray-300 shadow-lg p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Laptop Specifications</h2>
       
