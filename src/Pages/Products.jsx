@@ -24,6 +24,7 @@ const Products = () => {
     const detailsPage = (products)=>{
       navigator('/details')
       dispatcher(productInfo(products))
+      window.scrollTo(0, 0);
 
       localStorage.setItem('MainproductsInfo' , JSON.stringify(products))
 
